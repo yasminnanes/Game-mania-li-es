@@ -1,16 +1,18 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/src/app/clientes/formulario/formulario.component.css" rel="stylesheet">
     <title>Login  |  Game Mania</title>
-
-    <link href="login.component.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container" >
+   
+    
 
         <a class="links" id="paracadastro"></a>
         <a class="links" id="paralogin"></a>
@@ -19,14 +21,15 @@
 
           <!--FORMULÁRIO DE LOGIN-->
           <div id="login">
-            <form method="post" action=""> 
+
+            <form [formGroup] = "formCliente" (ngSubmit)= "onSubmit()" method="post" action="" > 
               <h1>Login</h1> 
-              <p> 
+              <p class="form-group"> 
                 <label for="email_login">Seu e-mail</label>
                 <input id="email_login" name="email_login" required="required" type="text" placeholder="contato@GameMania.com"/>
               </p>
               
-              <p> 
+              <p class="form-group"> 
                 <label for="senha_login">Sua senha</label>
                 <input id="senha_login" name="senha_login" required="required" type="password" placeholder="123456" /> 
               </p>
@@ -48,27 +51,28 @@
           </div>
     
           <!--FORMULÁRIO DE CADASTRO-->
-          <div id="cadastro">
-            <form method="post" action=""> 
+          <div id= "cadastro">
+            
+            <form  [formGroup] = "formCliente" (ngSubmit) = "onSubmit()" method="post" action="" > 
               <h1>Cadastro</h1> 
               
-              <p> 
+              <p class= "form-group"> 
                 <label for="nome_cad">Seu nome</label>
-                <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="GameMania" />
+                <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="GameMania" formControlName="nome_cad"/>
               </p>
               
-              <p> 
+              <p class= "form-group"> 
                 <label for="email_cad">Seu e-mail</label>
-                <input id="email_cad" name="email_cad" required="required" type="email" placeholder="contato@GameMania.com"/> 
+                <input id="email_cad" name="email_cad" required="required" type="email" placeholder="contato@GameMania.com" formControlName="email_cad"/> 
               </p>
               
-              <p> 
+              <p class= "form-group"> 
                 <label for="senha_cad">Sua senha</label>
-                <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="123456"/>
+                <input id="senha_cad" name="senha_cad" required="required" [value]="1" type="password" placeholder="123456" formControlName="senha_cad" />
               </p>
               
               <p> 
-                <input type="submit" value="Cadastrar"/> 
+                <input type="submit" value="Salvar"> 
               </p>
               
               <p class="link">  
@@ -78,7 +82,7 @@
             </form>
           </div>
         </div>
-      </div> 
 </body>
 
 </html>
+

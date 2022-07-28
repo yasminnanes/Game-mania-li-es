@@ -6,7 +6,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { IndexComponent } from './index/index.component';
-import { LoginComponent } from './login/login.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { FormularioComponent } from './clientes/formulario/formulario.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,12 @@ import { LoginComponent } from './login/login.component';
     HeaderComponent,
     FooterComponent,
     IndexComponent,
-    LoginComponent
+    FormularioComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
